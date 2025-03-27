@@ -10,6 +10,8 @@ struct node
     struct node *next;
 };
 
+// *head = nullptr;
+
 void insertNode(node *&head, int index, int data);
 void deleteNode(node *&head, int index);
 void displayList(node *head);
