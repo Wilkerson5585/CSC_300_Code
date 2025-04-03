@@ -2,25 +2,25 @@
 
 void insertNode(node *&head, int index, int data)
 {
-    node* newNode = new node;
+    node *newNode = new node;
     newNode->data = data;
     newNode->next = nullptr;
 
-    if(index == 0)
+    if (index == 0)
     {
         newNode->next = head;
         head = newNode;
     }
     else
     {
-        node* walker = head;
+        node *walker = head;
         int wIndex = 0;
-        while(walker != NULL && wIndex < index-1)
+        while (walker != NULL && wIndex < index - 1)
         {
             walker = walker->next;
             wIndex++;
         }
-        if(walker == nullptr)
+        if (walker == nullptr)
         {
             cout << "Index is too large, can't insert" << endl;
             return;
@@ -30,37 +30,56 @@ void insertNode(node *&head, int index, int data)
             newNode->next = walker->next;
             walker->next = newNode;
         }
-
     }
 }
 
-void deleteNode(node *&head, int index) 
+void deleteNode(node *&head, int index)
 {
     // Check if the list is empty and there's nothing to delete
 
-        // Write your code here!
+    if (head == nullptr)
+    {
+        cout << "nothing here, boss" << endl;
+        return;
+    }
 
     // Check if were are deleting at index 0 and handle accordingly
-    if(index == 0)
+    if (index == 0)
     {
-        // Write your code here!
+        node *temp = head;
+        head = head->next;
+        delete temp;
+        return;
     }
     // Handle other index deletions
     else
     {
-        // Write your code here!
+        node *walker = head;
+        int wIndex = 0;
+        while (walker != nullptr && wIndex < index - 1)
+        {
+            walker = walker->next;
+            wIndex++;
+        }
+        if (walker == nullptr || walker->next == nullptr)
+        {
+            cout << "index is too large or invalid, no can do." << endl;
+            return;
+        }
+        node *temp = walker->next;
+        walker->next = temp->next;
+        delete temp;
     }
 }
 
-void displayList(node *head) 
+void displayList(node *head)
 {
-    node* walker = head;
+    node *walker = head;
 
-    while(walker != nullptr)
+    while (walker != nullptr)
     {
-        cout << walker->data<<" ";
+        cout << walker->data << " ";
         walker = walker->next;
     }
-    cout<<endl;
-
+    cout << endl;
 }
