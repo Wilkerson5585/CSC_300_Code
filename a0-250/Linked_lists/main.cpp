@@ -33,14 +33,13 @@ int main()
             deleteNode(head, index);
             break;
         case 3:
-            /*
-                cout << "Which value do you want to search:  ";
-                cin >> data;
-                myNode = searchNode(head, data);
-                if (myNode != nullptr)
-                {
-                    cout << myNode->data << " was found at memory address:  " << myNode << endl;
-                }*/
+            cout << "Which value do you want to search:  ";
+            cin >> data;
+            myNode = searchNode(head, data);
+            if (myNode != nullptr)
+            {
+                cout << myNode->data << " was found at memory address:  " << myNode << endl;
+            }
             break;
         case 4:
             cout << "See you" << endl;

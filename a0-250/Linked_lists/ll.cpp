@@ -83,3 +83,19 @@ void displayList(node *head)
     }
     cout << endl;
 }
+
+node *searchNode(node *head, int key)
+{
+    node *walker = head;
+
+    while (walker != nullptr)
+    {
+        if (walker->data == key) // checking if the current data matches the key
+        {
+            return walker;
+        }
+        walker = walker->next;
+    }
+
+    return nullptr;
+}
