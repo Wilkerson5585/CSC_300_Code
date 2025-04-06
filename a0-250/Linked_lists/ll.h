@@ -13,7 +13,7 @@ struct node
 void insertNode(node *&head, int index, int data);
 void deleteNode(node *&head, int index);
 void displayList(node *head);
-node* searchNode(node *head, int key);
-
+node *searchNode(node *head, int key);
+void reverseList(node *&head);
 
 #endif

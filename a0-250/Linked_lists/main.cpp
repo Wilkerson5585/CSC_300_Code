@@ -15,6 +15,7 @@ int main()
         cout << "3. Search for and return a node" << endl;
         cout << "4. Exit" << endl
              << endl;
+        cout << "5. Reverse the list." << endl;
 
         cin >> choice;
 
@@ -43,6 +44,10 @@ int main()
             break;
         case 4:
             cout << "See you" << endl;
+            break;
+        case 5:
+            cout << "Turning things around" << endl;
+            reverseList(head);
             break;
         default:
             cout << "Invalid choice" << endl;

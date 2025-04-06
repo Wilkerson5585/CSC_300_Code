@@ -99,3 +99,19 @@ node *searchNode(node *head, int key)
 
     return nullptr;
 }
+
+void reverseList(node *&head)
+{
+    node *prev = nullptr;
+    node *current = head;
+    node *next = nullptr;
+
+    while (current != nullptr)
+    {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    head = prev; // Update head to the new first node
+}
