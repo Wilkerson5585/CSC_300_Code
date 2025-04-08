@@ -1,11 +1,13 @@
 #include "sqll.h"
+// to create the .exe for the program, use the command: g++ mainll.cpp sqll.cpp then ./a
 
 int main()
 {
     node *head = nullptr;
     int choice, data;
 
-    do {
+    do
+    {
         cout << endl;
         cout << "1) Stack - Push" << endl;
         cout << "2) Stack - Pop" << endl;
@@ -37,11 +39,11 @@ int main()
             cout << "See you!" << endl;
             break;
         default:
-            cout <<"Invalid choice" << endl;
+            cout << "Invalid choice" << endl;
             break;
         }
         displayList(head);
 
-    }while(choice != 5);
+    } while (choice != 5);
     return 0;
 }
