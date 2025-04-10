@@ -48,6 +48,15 @@ void enqueue(node *&head, int value)
 }
 void dequeue(node *&head)
 {
+    if (head == nullptr)
+    {
+        cout << " the queue is empty." << endl;
+        return;
+    }
+    node *dltTemp = head;
+    head = head->next;
+    delete dltTemp;
+    cout << "finished deque" << endl;
 }
 
 void displayList(node *head)
